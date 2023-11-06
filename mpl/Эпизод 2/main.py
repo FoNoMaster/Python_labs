@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-f = open('lms.mipt.ru_pluginfile.php_168477_mod_assign_intro_frames.dat.txt')
+f = open('frames_dat.txt')
 x = []
 y = []
 i = 0
