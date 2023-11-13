@@ -25,17 +25,17 @@ print(data2)
 
 data3 = pd.DataFrame(flytimes, index=cargos)
 
-ax = data1.plot(kind='bar')
+ax = data1.plot(kind='bar', figsize=(10, 10))
 ax.set_xlabel('COMPANY')
 ax.set_ylabel('WEIGHT')
 
-# bx = data2.plot(kind='bar')
-# bx.set_xlabel('COMPANY')
-# bx.set_ylabel('PRICE')
+bx = data2.plot(kind='bar', figsize=(10, 10))
+bx.set_xlabel('COMPANY')
+bx.set_ylabel('PRICE')
 
-# cx = data3.plot(kind='bar')
-# cx.set_xlabel('COMPANY')
-# cx.set_ylabel('NUMBER OF FLIGHTS')
+cx = data3.plot(kind='bar', figsize=(10, 10))
+cx.set_xlabel('COMPANY')
+cx.set_ylabel('NUMBER OF FLIGHTS')
 
-plt.savefig("WEIGHT.png")
+plt.savefig("NUMBER OF FLIGHTS.png")
 plt.show()
