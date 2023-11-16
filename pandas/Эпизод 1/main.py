@@ -1,11 +1,10 @@
 import pandas as pd
-from heapq import nlargest
 
 df = pd.read_csv("transactions.csv")
 print(df)
 
-print(nlargest(3, list(df.loc[df['STATUS'] == 'OK', 'SUM']))) #выводит 3 максимальных значения в МАССИВЕ,
-# но думаю это приемлимо
+print("\n3 самых крупных платежа из реально проведённых:", end=' ')
+print(list(df.loc[df['STATUS'] == 'OK', ['CONTRACTOR', 'STATUS', 'SUM']].nlargest(3, ['SUM']).loc[:, 'SUM']))
 
+print("Полная сумма реально проведённых платежей в адрес Umbrella, Inc:", end=' ')
 print(df.loc[df['STATUS'] == 'OK', ['CONTRACTOR', 'SUM']].groupby('CONTRACTOR').sum().loc['Umbrella, Inc', 'SUM'])
-# а это полная сумма реально проведённых платежей в адрес Umbrella, Inc
